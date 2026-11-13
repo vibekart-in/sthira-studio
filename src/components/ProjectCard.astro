@@ -1,0 +1,18 @@
+---
+import type { Project } from '../data/projects';
+interface Props { project: Project; featured?: boolean; }
+const { project, featured = false } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+<a class:list={['project-card', { 'project-card-featured': featured }]} href={`${base}projects/${project.slug}/`} data-project-card data-category={project.category}>
+  <div class="project-card-image image-frame">
+    <img src={project.cover} alt={project.coverAlt} loading="lazy" />
+    <span class="image-index">{project.number} / 04</span>
+    <span class="image-arrow" aria-hidden="true">↗</span>
+    <span class="project-concept-tag">Concept study</span>
+  </div>
+  <div class="project-card-meta">
+    <div><span class="project-category">{project.category} <i>·</i> {project.location}</span><h3>{project.title}</h3><p>{project.subtitle}</p></div>
+    <span class="project-year">{project.year}</span>
+  </div>
+</a>

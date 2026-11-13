@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Contact — Sthira Studio" description="Start a conversation about an architecture or interior project with Sthira Studio.">
+  <section class="page-hero contact-page-hero"><div class="section-index"><span>04</span><i></i><span>Start a conversation</span></div><h1>Good things begin<br /><em>with a hello.</em></h1><p>Have a place, a brief or an early idea in mind? Tell us a little about it. The first conversation is simply a way to understand what matters to you.</p></section>
+  <section class="contact-layout section-pad"><div class="contact-details"><span class="contact-kicker">GET IN TOUCH / 01</span><h2>Let's start<br /><em>somewhere.</em></h2><p>For this demonstration, the contact details below are placeholders. Replace them with the real studio's information before using the site for a client.</p><a class="contact-email" href="mailto:hello@example.com">hello@example.com <span>↗</span></a><div class="contact-meta"><div><span>Based in</span><strong>Jaipur, Rajasthan, India</strong></div><div><span>Working on</span><strong>Architecture · Interiors · Renewal</strong></div></div></div>
+    <form class="enquiry-form" data-enquiry-form>
+      <div class="form-heading"><span>PROJECT ENQUIRY</span><p>Share a few details. We'll prepare an email draft for you.</p></div>
+      <label>Your name<input type="text" name="name" autocomplete="name" placeholder="How should we address you?" required /></label>
+      <label>Email address<input type="email" name="email" autocomplete="email" placeholder="you@example.com" required /></label>
+      <label>What are you exploring?<select name="project" required><option value="" disabled selected>Select a project type</option><option>New architecture</option><option>Interior design</option><option>Renovation / renewal</option><option>Commercial / hospitality</option><option>Something else</option></select></label>
+      <label>A little about your project<textarea name="message" rows="4" placeholder="Location, timeline, what you have in mind..." required></textarea></label>
+      <button class="button button-dark form-submit" type="submit">Prepare enquiry email <span>↗</span></button>
+      <p class="form-note" data-form-note>This demo uses your device's email application. No information is stored or sent to a server.</p>
+    </form>
+  </section>
+  <section class="contact-footnote"><span>ONE LAST THING</span><p>Not every brief arrives fully formed. An early thought is a perfectly good place to begin.</p></section>
+</BaseLayout>

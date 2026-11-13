@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+<BaseLayout title="About this demonstration — Sthira Studio" description="A note about the fictional studio brand, sample project concepts and imagery used in this portfolio demonstration.">
+  <section class="page-hero page-hero-compact"><div class="section-index"><span>NOTE</span><i></i><span>About this demonstration</span></div><h1>A design exercise,<br /><em>made with intention.</em></h1><p>This website is a fictional architecture and interiors studio concept created to demonstrate design and development capability.</p></section>
+  <section class="demo-note-content section-pad"><article><span>01 / THE STUDIO</span><h2>A fictional identity</h2><p>Sthira Studio is a working concept name. It does not represent a real architecture practice, registered business or operating studio.</p></article><article><span>02 / THE PROJECTS</span><h2>Illustrative concept studies</h2><p>Project names, locations, years, descriptions and design narratives are fictional examples created for presentation. They should not be interpreted as completed work, client commissions, built projects or professional credentials.</p></article><article><span>03 / THE IMAGERY</span><h2>Visual references</h2><p>Photography is sourced from Unsplash and is used as visual reference. Images are not evidence that the fictional studio designed or built the spaces shown. Refer to the included README for image source links and credits.</p></article><article><span>04 / CONTACT</span><h2>Sample contact details</h2><p>The email address hello@example.com is a placeholder. The enquiry form prepares an email in the visitor's local email application; it does not save or transmit information to a database.</p></article></section>
+  <section class="project-bottom-cta"><span>Return to the studio</span><a href={base}>Explore the homepage <b>↗</b></a></section>
+</BaseLayout>

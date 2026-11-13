@@ -1,0 +1,7 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+<BaseLayout title="Page not found — Sthira Studio" description="The page you were looking for could not be found.">
+  <section class="not-found section-pad"><span>404 / NOT FOUND</span><h1>Some paths<br /><em>lead elsewhere.</em></h1><p>The page you're looking for may have moved or may not exist.</p><a class="button button-dark" href={base}>Return home <span>↗</span></a></section>
+</BaseLayout>

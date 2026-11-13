@@ -1,0 +1,24 @@
+---
+const base = import.meta.env.BASE_URL;
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand-block">
+      <a class="wordmark wordmark-footer" href={base} aria-label="Sthira Studio home">
+        <span class="wordmark-symbol">S<span>.</span></span>
+        <span class="wordmark-name">STHIRA <small>STUDIO</small></span>
+      </a>
+      <p>Architecture with a point of view.<br />Interiors with an after-effect.</p>
+    </div>
+    <div class="footer-links">
+      <div><span class="footer-label">Explore</span><a href={`${base}projects/`}>Selected work</a><a href={`${base}services/`}>Services</a><a href={`${base}studio/`}>The studio</a></div>
+      <div><span class="footer-label">Get in touch</span><a href={`${base}contact/`}>Start a conversation ↗</a><a href="mailto:hello@example.com">hello@example.com</a><span>Jaipur, Rajasthan, India</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© {year} Sthira Studio · Portfolio concept</span>
+    <span>Spatial thinking. Digital craft.</span>
+    <a href={`${base}demo-note/`}>About this demonstration ↗</a>
+  </div>
+</footer>
