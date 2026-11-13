@@ -5,32 +5,75 @@ import SectionIntro from '../components/SectionIntro.astro';
 import { projects } from '../data/projects';
 const base = import.meta.env.BASE_URL;
 ---
-<BaseLayout title="Sthira Studio — A quieter kind of architecture" description="Architecture and interiors shaped by place, light and the rituals of everyday life.">
-  <section class="home-hero" id="top">
-    <div class="hero-copy">
-      <div class="eyebrow hero-kicker"><span class="eyebrow-line"></span> Independent architecture / Jaipur + everywhere</div>
-      <h1>FORM<br /><span class="hero-outline">FOLLOWS</span><br /><em>FEELING<span class="hero-period">.</span></em></h1>
-      <p class="hero-description">We design places that move with the people inside them. Architecture, interiors and spatial ideas with clarity, character and a little curiosity.</p>
-      <div class="hero-actions"><a class="button button-dark" href={`${base}projects/`}>Explore selected work <span>↗</span></a><a class="text-link" href={`${base}studio/`}>Inside the studio <span>↗</span></a></div>
-      <div class="hero-meta"><span>01 / 04</span><i></i><span>People&nbsp; · &nbsp;Place&nbsp; · &nbsp;Possibility</span></div>
-    </div>
-    <div class="hero-visual" aria-label="Interactive three-dimensional architectural concept model">
-      <div class="hero-visual-glow"></div>
-      <canvas id="architecture-canvas" aria-label="A slowly rotating three-dimensional architectural maquette. Move your pointer to explore its perspective." role="img"></canvas>
-      <div class="hero-visual-grid" aria-hidden="true"></div>
-      <div class="hero-model-label"><span class="model-label-dot"></span><span>SPATIAL STUDY / 001</span><strong>Courtyard house<br />— Jaipur, IN</strong></div>
-      <div class="hero-coordinate">26°54' N<br />75°47' E</div>
-      <div class="hero-orbit-label">MODEL VIEW / 360°</div>
-    </div>
-    <a class="hero-scroll-cue" href="#manifesto"><span>Scroll to explore</span><i></i></a>
-    <div class="hero-side-note">STHIRA <span>ARCHITECTURE / INTERIORS</span></div>
-  </section>
+<BaseLayout title="Sthira Studio â€” A quieter kind of architecture" description="Architecture and interiors shaped by place, light and the rituals of everyday life.">
+  <section class="cinematic-sequence" id="top" data-sequence-root data-base-url={base}>
+  <div class="sequence-stage" data-sequence-stage>
+    <img
+      class="sequence-poster"
+      data-sequence-poster
+      src={`${base}images/hero-sequence-poster.webp`}
+      alt="A contemporary luxury home interior with open spaces and natural light"
+      fetchpriority="high"
+    />
+    <canvas class="sequence-canvas" data-sequence-canvas aria-hidden="true"></canvas>
+    <div class="sequence-grade" aria-hidden="true"></div>
+    <div class="sequence-grain" aria-hidden="true"></div>
 
-  <div class="ticker-band" aria-label="Studio principles"><div class="ticker-track"><span>Architecture with intent</span><i>✳</i><span>Interiors with feeling</span><i>✳</i><span>Materials with meaning</span><i>✳</i><span>Spaces that endure</span><i>✳</i><span>Architecture with intent</span><i>✳</i><span>Interiors with feeling</span><i>✳</i></div></div>
+    <div class="sequence-topline">
+      <strong>STHIRA STUDIO</strong>
+      <span>Architecture / Interiors / Spatial stories</span>
+      <span class="sequence-location">Independent practice / Jaipur + everywhere</span>
+    </div>
+
+    <div class="sequence-content" data-parallax="0.35">
+      <article class="sequence-scene is-active" data-sequence-scene="0" aria-hidden="false">
+        <p class="sequence-kicker">Independent architecture / Jaipur + everywhere</p>
+        <h1 class="sequence-title">FORM<br /><span>FOLLOWS</span><br /><em>FEELING.</em></h1>
+        <p class="sequence-description">We shape architecture around the way people live â€” with clarity, character and a quiet respect for place.</p>
+        <div class="sequence-actions">
+          <a class="sequence-cta" href={`${base}projects/`}>Explore selected work <span>â†—</span></a>
+        </div>
+      </article>
+
+      <article class="sequence-scene" data-sequence-scene="1" aria-hidden="true">
+        <p class="sequence-step-number">01 / THE OPEN PLAN</p>
+        <h2 class="sequence-story-title">Space to<br />gather.</h2>
+        <p class="sequence-story-copy">An open arrangement brings living, dining and everyday rituals into a single calm composition.</p>
+      </article>
+
+      <article class="sequence-scene" data-sequence-scene="2" aria-hidden="true">
+        <p class="sequence-step-number">02 / THE APPROACH</p>
+        <h2 class="sequence-story-title">Let light<br />lead the way.</h2>
+        <p class="sequence-story-copy">Natural light moves through the interior, softening edges and bringing the whole space into focus.</p>
+      </article>
+
+      <article class="sequence-scene" data-sequence-scene="3" aria-hidden="true">
+        <p class="sequence-step-number">03 / MATERIAL & DETAIL</p>
+        <h2 class="sequence-story-title">Made to<br />be felt.</h2>
+        <p class="sequence-story-copy">Thoughtful finishes and tactile surfaces bring warmth and character to everyday spaces.</p>
+      </article>
+
+      <article class="sequence-scene" data-sequence-scene="4" aria-hidden="true">
+        <p class="sequence-step-number">04 / THE LIVING</p>
+        <h2 class="sequence-story-title">Room to<br />unwind.</h2>
+        <p class="sequence-story-copy">A considered balance of openness and intimacy gives everyday life room to unfold.</p>
+      </article>
+    </div>
+
+    <div class="sequence-index" aria-hidden="true">SCROLL TO MOVE / 001â€”144</div>
+    <div class="sequence-bottomline">
+      <span>People / Place / Possibility</span>
+      <span class="sequence-credit">Concept film Â· Footage by <a href="https://www.pexels.com/video/modern-luxury-interior-with-open-design-38675643/" target="_blank" rel="noreferrer">Alef Morais / Pexels</a></span>
+    </div>
+    <div class="sequence-progress-track" aria-hidden="true"><div class="sequence-progress-fill" data-sequence-progress></div></div>
+  </div>
+</section>
+
+  <div class="ticker-band" aria-label="Studio principles"><div class="ticker-track"><span>Architecture with intent</span><i>âœ³</i><span>Interiors with feeling</span><i>âœ³</i><span>Materials with meaning</span><i>âœ³</i><span>Spaces that endure</span><i>âœ³</i><span>Architecture with intent</span><i>âœ³</i><span>Interiors with feeling</span><i>âœ³</i></div></div>
 
   <section class="manifesto-section section-pad" id="manifesto" data-reveal>
     <div class="manifesto-mark">S<span>.</span></div>
-    <div class="manifesto-content"><div class="section-index"><span>01</span><i></i><span>A way of seeing</span></div><h2>Good spaces don't ask for attention.<br /><em>They earn a place in your life.</em></h2><div class="manifesto-bottom"><p>We believe architecture is more than the arrangement of walls and rooms. It is the feeling of arriving, the quality of the light at a certain hour, and the details that quietly make a place your own.</p><a class="text-link" href={`${base}studio/`}>Get to know the studio <span>↗</span></a></div></div>
+    <div class="manifesto-content"><div class="section-index"><span>01</span><i></i><span>A way of seeing</span></div><h2>Good spaces don't ask for attention.<br /><em>They earn a place in your life.</em></h2><div class="manifesto-bottom"><p>We believe architecture is more than the arrangement of walls and rooms. It is the feeling of arriving, the quality of the light at a certain hour, and the details that quietly make a place your own.</p><a class="text-link" href={`${base}studio/`}>Get to know the studio <span>â†—</span></a></div></div>
   </section>
 
   <section class="work-section section-pad" data-reveal>
@@ -38,31 +81,31 @@ const base = import.meta.env.BASE_URL;
     <div class="project-grid home-project-grid">
       {projects.slice(0, 3).map((project, index) => <ProjectCard project={project} featured={index === 0} />)}
     </div>
-    <div class="section-end-link"><span>01 — 03 / SELECTED STUDIES</span><a class="button button-outline" href={`${base}projects/`}>View all explorations <span>↗</span></a></div>
+    <div class="section-end-link"><span>01 â€” 03 / SELECTED STUDIES</span><a class="button button-outline" href={`${base}projects/`}>View all explorations <span>â†—</span></a></div>
   </section>
 
   <section class="interlude-image">
     <img src="https://images.unsplash.com/photo-1754613389158-3b13a051a81a?auto=format&fit=crop&w=2200&q=85" alt="Soft natural light entering a calm and carefully composed living interior" loading="lazy" />
-    <div class="interlude-overlay"><span>LIGHT / MATERIAL / MOMENT</span><p>“A place should feel<br /><em>like it could only be here.</em>”</p></div>
+    <div class="interlude-overlay"><span>LIGHT / MATERIAL / MOMENT</span><p>â€œA place should feel<br /><em>like it could only be here.</em>â€</p></div>
   </section>
 
   <section class="approach-section section-pad" data-reveal>
     <SectionIntro index="03" eyebrow="How we work" title="A thoughtful process.<br /><em>From first thought to final detail.</em>" text="Each project begins with listening. We take time to understand the people, place and possibilities before deciding what a space should become." />
     <div class="process-grid">
-      <article class="process-step"><span>01 / Listen</span><div class="process-symbol">◎</div><h3>Understand the brief</h3><p>We begin with conversations, context and careful questions. The best solutions come from understanding what matters most.</p></article>
-      <article class="process-step"><span>02 / Imagine</span><div class="process-symbol">⌁</div><h3>Find the direction</h3><p>Ideas take shape through spatial studies, material explorations and a clear design language.</p></article>
-      <article class="process-step"><span>03 / Resolve</span><div class="process-symbol">⌗</div><h3>Work through detail</h3><p>Proportion, light, finish and function are brought together into a coherent whole.</p></article>
-      <article class="process-step"><span>04 / Realise</span><div class="process-symbol">↗</div><h3>Bring it to life</h3><p>We value thoughtful coordination and considered execution, right down to the final touch.</p></article>
+      <article class="process-step"><span>01 / Listen</span><div class="process-symbol">â—Ž</div><h3>Understand the brief</h3><p>We begin with conversations, context and careful questions. The best solutions come from understanding what matters most.</p></article>
+      <article class="process-step"><span>02 / Imagine</span><div class="process-symbol">âŒ</div><h3>Find the direction</h3><p>Ideas take shape through spatial studies, material explorations and a clear design language.</p></article>
+      <article class="process-step"><span>03 / Resolve</span><div class="process-symbol">âŒ—</div><h3>Work through detail</h3><p>Proportion, light, finish and function are brought together into a coherent whole.</p></article>
+      <article class="process-step"><span>04 / Realise</span><div class="process-symbol">â†—</div><h3>Bring it to life</h3><p>We value thoughtful coordination and considered execution, right down to the final touch.</p></article>
     </div>
   </section>
 
   <section class="services-preview section-pad" data-reveal>
-    <div class="services-preview-left"><div class="section-index section-index-light"><span>04</span><i></i><span>What we do</span></div><h2>One connected view<br />of <em>space.</em></h2><p>From the first line of a building to the last considered detail of an interior, we look at the whole experience.</p><a class="button button-light" href={`${base}services/`}>Explore our services <span>↗</span></a></div>
-    <div class="services-preview-list"><a href={`${base}services/#architecture`}><span>01</span><strong>Architecture</strong><i>↗</i></a><a href={`${base}services/#interiors`}><span>02</span><strong>Interior design</strong><i>↗</i></a><a href={`${base}services/#renovation`}><span>03</span><strong>Renovation & renewal</strong><i>↗</i></a><a href={`${base}services/#spatial`}><span>04</span><strong>Spatial & styling direction</strong><i>↗</i></a></div>
+    <div class="services-preview-left"><div class="section-index section-index-light"><span>04</span><i></i><span>What we do</span></div><h2>One connected view<br />of <em>space.</em></h2><p>From the first line of a building to the last considered detail of an interior, we look at the whole experience.</p><a class="button button-light" href={`${base}services/`}>Explore our services <span>â†—</span></a></div>
+    <div class="services-preview-list"><a href={`${base}services/#architecture`}><span>01</span><strong>Architecture</strong><i>â†—</i></a><a href={`${base}services/#interiors`}><span>02</span><strong>Interior design</strong><i>â†—</i></a><a href={`${base}services/#renovation`}><span>03</span><strong>Renovation & renewal</strong><i>â†—</i></a><a href={`${base}services/#spatial`}><span>04</span><strong>Spatial & styling direction</strong><i>â†—</i></a></div>
   </section>
 
-  <section class="home-contact section-pad" data-reveal><div class="section-index"><span>05</span><i></i><span>Begin somewhere</span></div><div class="home-contact-main"><h2>Have a place<br />in <em>mind?</em></h2><div><p>Every meaningful space begins with a conversation. Tell us a little about what you're imagining.</p><a class="button button-dark" href={`${base}contact/`}>Start a conversation <span>↗</span></a></div></div></section>
+  <section class="home-contact section-pad" data-reveal><div class="section-index"><span>05</span><i></i><span>Begin somewhere</span></div><div class="home-contact-main"><h2>Have a place<br />in <em>mind?</em></h2><div><p>Every meaningful space begins with a conversation. Tell us a little about what you're imagining.</p><a class="button button-dark" href={`${base}contact/`}>Start a conversation <span>â†—</span></a></div></div></section>
   <script>
-    import '../scripts/architecture-scene.js';
+    import '../scripts/hero-sequence.js';
   </script>
 </BaseLayout>

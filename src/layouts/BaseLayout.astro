@@ -3,7 +3,7 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 interface Props { title?: string; description?: string; image?: string; }
-const { title = 'Sthira Studio — Architecture & Interiors', description = 'A considered architecture and interiors studio concept. Spaces shaped by place, light and everyday life.', image = 'https://images.unsplash.com/photo-1776657215949-1b7fce8cd351?auto=format&fit=crop&w=1600&q=85' } = Astro.props;
+const { title = 'Sthira Studio â€” Architecture & Interiors', description = 'A considered architecture and interiors studio concept. Spaces shaped by place, light and everyday life.', image = 'https://images.unsplash.com/photo-1776657215949-1b7fce8cd351?auto=format&fit=crop&w=1600&q=85' } = Astro.props;
 const base = import.meta.env.BASE_URL;
 ---
 <!doctype html>
@@ -11,7 +11,7 @@ const base = import.meta.env.BASE_URL;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#080d19" />
+    <meta name="theme-color" content="#101713" />
     <meta name="description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
@@ -20,7 +20,7 @@ const base = import.meta.env.BASE_URL;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://images.unsplash.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
     <title>{title}</title>
   </head>

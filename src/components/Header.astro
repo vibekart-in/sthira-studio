@@ -1,6 +1,11 @@
 ---
 const base = import.meta.env.BASE_URL;
+const cleanBase = base.replace(/\/$/, '');
 const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+const routePath = cleanBase && currentPath.startsWith(cleanBase)
+  ? currentPath.slice(cleanBase.length) || '/'
+  : currentPath;
+
 const nav = [
   { label: 'Projects', href: `${base}projects/`, key: '/projects' },
   { label: 'Services', href: `${base}services/`, key: '/services' },
@@ -8,22 +13,77 @@ const nav = [
   { label: 'Contact', href: `${base}contact/`, key: '/contact' }
 ];
 ---
+
 <div class="topline">
   <p>Architecture · Interiors · Spatial design</p>
   <p>Jaipur, India <span class="topline-dot">—</span> Working everywhere</p>
 </div>
+
 <header class="site-header" data-header>
   <a class="wordmark" href={base} aria-label="Sthira Studio home">
     <span class="wordmark-symbol">S<span>.</span></span>
     <span class="wordmark-name">STHIRA <small>STUDIO</small></span>
   </a>
-  <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation" data-menu-toggle>
-    <span></span><span></span>
+
+  <button
+    class="menu-toggle"
+    type="button"
+    aria-label="Open navigation"
+    aria-expanded="false"
+    aria-controls="primary-navigation"
+    data-menu-toggle
+  >
+    <span class="menu-toggle-icon" aria-hidden="true">
+      <i></i>
+      <i></i>
+    </span>
+    <small class="menu-toggle-label">Menu</small>
   </button>
-  <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation" data-navigation>
-    {nav.map((item) => (
-      <a href={item.href} class:list={[{ active: currentPath.startsWith(item.key) }]}>{item.label}</a>
-    ))}
-    <a class="nav-enquire" href={`${base}contact/`}>Start a conversation <span aria-hidden="true">↗</span></a>
+
+  <nav
+    class="primary-nav"
+    id="primary-navigation"
+    aria-label="Primary navigation"
+    data-navigation
+  >
+    <div class="nav-overlay-inner">
+
+      <div class="nav-overlay-top">
+        <span>Explore Sthira</span>
+        <span>Jaipur · Working everywhere</span>
+      </div>
+
+      <div class="nav-links">
+        {nav.map((item, index) => {
+          const active = routePath.startsWith(item.key);
+
+          return (
+            <a
+              href={item.href}
+              class:list={['nav-link', { active }]}
+              aria-current={active ? 'page' : undefined}
+            >
+              <span class="nav-link-index">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <span class="nav-link-label">{item.label}</span>
+              <span class="nav-link-arrow" aria-hidden="true">↗</span>
+            </a>
+          );
+        })}
+      </div>
+
+      <div class="nav-overlay-bottom">
+        <div class="nav-overlay-note">
+          <span>STHIRA STUDIO</span>
+          <p>Architecture · Interiors · Spatial design</p>
+        </div>
+
+        <a class="nav-enquire" href={`${base}contact/`}>
+          Start a conversation <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+    </div>
   </nav>
 </header>

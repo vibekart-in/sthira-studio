@@ -1,96 +1,76 @@
-# STHIRA — Architecture / Interiors / Spatial Experiments
+# STHIRA STUDIO
 
-A multi-page, motion-led architecture studio website concept built with **Astro 6, Three.js and GSAP**. The visual direction is intentionally different from a conventional neutral editorial portfolio: midnight-blue surfaces, electric chartreuse, geometric typography, a procedural 3D architectural maquette and scroll-linked camera movement.
+A multi-page architecture and interiors portfolio concept built with Astro 6, GSAP, and ScrollTrigger.
 
-> **Portfolio demo only:** Sthira is a fictional demonstration brand. All project titles, locations, narratives, dates and project details are illustrative concept studies, not real commissions or professional credentials. The enquiry email (`hello@example.com`) is a placeholder. The form prepares an email in the visitor's local mail application; it does not send or store submissions.
+> Demonstration disclosure: STHIRA Studio is a fictional demonstration brand. All four projects are illustrative concept studies, not completed client commissions.
+
+## Features
+
+- Quiet-luxury architectural portfolio design.
+- Cinematic homepage hero with 144 local WebP frames.
+- Local MP4 fallback and static poster fallback.
+- Four architectural and interior concept studies.
+- Individual project pages with galleries, materials and photographer credits.
+- Responsive navigation and project category filters.
+- Scroll reveals and reduced-motion support.
 
 ## Technology
 
-- Astro 6 — static pages and reusable components
-- Three.js — procedural 3D architectural maquette (generated from geometry; no large model download)
-- GSAP + ScrollTrigger — scroll-linked camera, text reveals and dimensional hover details
-- Custom CSS — responsive dark visual system and motion fallbacks
-- Google Fonts — Syne, Space Grotesk and Space Mono
-- GitHub Actions + GitHub Pages — static deployment
+- Astro 6
+- GSAP and ScrollTrigger
+- Custom CSS and JavaScript
+- GitHub Actions and GitHub Pages
 
 ## Requirements
 
-- Node.js **22.12.0 or newer**
-- npm (included with Node.js)
-- VS Code or another code editor
-- A modern browser with WebGL enabled for the 3D hero; the surrounding site remains readable if WebGL is unavailable
+- Node.js 22 or newer
+- npm
 
-Check versions first:
+## Local development
 
-```powershell
-node -v
-npm -v
-```
+Install dependencies:
 
-## Run locally
+    npm ci
 
-Extract this ZIP, open PowerShell in the `sthira-studio` project folder, and run:
+Start the development server:
 
-```powershell
-npm install
-npm run dev
-```
+    npm run dev
 
-Open the local URL printed by Astro (normally `http://localhost:4321/`). Stop the server with `Ctrl + C`.
+## Production build
 
-Create and inspect a production build:
+    npm run build
+    npm run preview
 
-```powershell
-npm run build
-npm run preview
-```
+The production site is generated in the dist directory.
 
-The generated static site is written to `dist/`.
+## GitHub Pages
 
-## What is interactive
+This repository deploys as a project site under /sthira-studio/.
 
-- Procedural Three.js architecture model in the homepage hero
-- Slow 3D model rotation and pointer-responsive perspective
-- GSAP ScrollTrigger movement that changes the model/camera as the hero scrolls away
-- Entrance and section-reveal motion
-- Subtle 3D tilt on project cards
-- Project-category filters
-- Responsive navigation and email-draft enquiry form
-- `prefers-reduced-motion` support; the 3D scene is rendered as a still frame when reduced motion is requested
+Production build:
 
-The 3D scene is made from lightweight Three.js primitives (building volumes, cantilevers, fins, glass planes, a courtyard datum ring and a base). It is original procedural artwork for this demo, not copied from the reference repositories.
+     = '/sthira-studio'
+    npm run build
 
-## Pages included
+The GitHub Actions workflow builds and deploys the site when changes are pushed to main.
 
-- `/` — 3D-first home
-- `/projects/` — project index with client-side filters
-- `/projects/courtyard-house/` — project detail
-- `/projects/house-of-light/` — project detail
-- `/projects/still-house/` — project detail
-- `/projects/home-in-layers/` — project detail
-- `/services/` — services
-- `/studio/` — studio philosophy
-- `/contact/` — enquiry interaction (local email draft only)
-- `/demo-note/` — portfolio demonstration disclosure
+Configure the repository Pages source as GitHub Actions.
 
-## GitHub Pages deployment
+Expected website URL:
 
-1. Create a separate GitHub repository named **`sthira-studio`**. Keep it separate from VibeKart.
-2. Commit the contents of this folder to the new repository's `main` branch.
-3. In **Settings → Pages**, choose **GitHub Actions** as the source.
-4. The included `.github/workflows/deploy.yml` builds and deploys the static site with `BASE_PATH=/sthira-studio`.
-5. After the workflow succeeds, the expected URL is `https://vibekart-in.github.io/sthira-studio/`.
+https://vibekart-in.github.io/sthira-studio/
 
-If the repository name or GitHub owner is different, update `BASE_PATH` in `.github/workflows/deploy.yml` and the `site` value in `astro.config.mjs` before pushing.
+## Assets and credits
 
-## Accessibility and performance notes
+Project photographs are stored locally in public/images/projects.
+Photographer credits and source URLs are listed in PROJECT-IMAGE-CREDITS-20261113-184110.txt and on the relevant project pages.
 
-- The 3D renderer is capped at a modest device pixel ratio; antialiasing is reduced on narrow screens.
-- A CSS gradient/grid remains behind the canvas if WebGL cannot initialise.
-- Reduced-motion preference disables continuous animation and scroll-driven scene motion.
-- The 3D scene uses local geometry instead of a large downloaded GLB model.
-- Review the site on a desktop and a mobile device before public deployment, especially GPU usage and loading on lower-powered phones.
+The homepage hero footage is by Alef Morais via Pexels.
+Pexels license: https://www.pexels.com/license/
 
-## Before adapting for a real client
+The hero maintenance scripts are stored in the scripts directory.
 
-Replace the fictional studio identity, concept studies, all illustrative text and imagery with approved client material. Replace the placeholder email and connect a real form endpoint only when the client chooses where enquiries should be delivered. Do not present the concept projects as commissions completed by a real architecture practice.
+## Contact form
+
+The enquiry interaction prepares an email in the visitor's local email application. It does not store or send submissions through a server.
+The current hello@example.com address is a placeholder and must be replaced before real enquiries are accepted.
